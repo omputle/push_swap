@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 14:15:00 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/07 09:23:31 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 10:29:17 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,39 @@ int		mid_point(int n)
 
 int		find_node(t_node **stack_a, int check)
 {
-	t_node	*ptr;
+	t_node	*ptr1;
+	t_node	*ptr2;
+	int		pos1;
+	int		pos2;
 	int		pos;
 
+	pos1 = 0;
+	pos2 = 0;
 	pos = 0;
-	if (list_length(stack_a) < 1)
+	if ((pos2 = list_length(stack_a)) < 1)
 		return (0);
-	ptr = (*stack_a);
-	while (ptr)
+	ptr1 = (*stack_a);
+	ptr2 = (*stack_a);
+	while (ptr2->next)
 	{
-		pos++;
-		if (ptr->element < check)
+		if (ptr2->element < check)
 			break ;
-		ptr = ptr->next;
+		ptr2 = ptr2->next;
+		pos2--;
 	}
+	while (ptr1)
+	{
+		pos1++;
+		if (ptr1->element < check)
+			break ;
+		ptr1 = ptr1->next;
+	}
+	if (pos2 < pos1)
+		return (0);
+	else if (pos1 - 1 <= list_length(stack_a) + 1 - pos2)
+		pos = pos1;
+	else
+		pos = pos2;
 	if (pos == 0)
 		return (0);
 	else if (pos == 1)
