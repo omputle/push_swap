@@ -6,7 +6,7 @@
 #    By: omputle <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/27 02:52:32 by omputle           #+#    #+#              #
-#    Updated: 2019/09/07 02:39:14 by omputle          ###   ########.fr        #
+#    Updated: 2019/09/07 09:14:08 by omputle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,10 @@ SRC = rules/rotate.c \
 	  rules/rrr.c \
 	  rules/pa.c \
 	  rules/pb.c \
+	  is_sorted.c \
 	  sort.c \
+	  sort_three.c \
+	  sort_five.c \
 	  get_next_line.c \
 
 CC = gcc

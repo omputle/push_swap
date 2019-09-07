@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 14:15:00 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/07 02:41:32 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 09:23:31 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ void	bring_back(t_node **stack_b)
 	}
 }
 
-void	sort_100(t_node **stack_a, t_node **stack_b)
+void	sort_hundred(t_node **stack_a, t_node **stack_b)
 {
 	int		min;
 	int		max;
@@ -154,7 +154,7 @@ void	sort_100(t_node **stack_a, t_node **stack_b)
 	int		chunk_num;
 	int		div;
 
-	div = 10;
+	div = 5;
 	min = find_min(stack_a);
 	max = find_max(stack_a);
 	chunk_size = ((max - min) / div) + 1;
@@ -185,17 +185,27 @@ int		main(int ac, char **av)
 {
 	t_node	*stack_a = NULL;
 	t_node	*stack_b = NULL;
-	if (ac > 1)
+	if (ac == 1)
+		ft_putendl("Error");
+	else if (ac > 1)
 	{
 		stack_a = create_list(ac - 1, av);
-		sort_100(&stack_a, &stack_b);
-//		find_node(&stack_A, 5);
-		ft_putchar('\n');
+		if (is_sorted(&stack_a) == 0)
+		{
+			if (ac == 2)
+				return (0);
+			else if (ac == 4)
+				sort_three(&stack_a);
+			else if (ac == 6)
+				sort_five(&stack_a, &stack_b);
+			else if (ac > 6)
+				sort_hundred(&stack_a, &stack_b);
+		}
 		ft_putendl("Stack A");
 		display_list(stack_a);
 		ft_putendl("Stack B");
 		display_list(stack_b);
-		delete_list(&stack_a);
+//		delete_list(&stack_a);
 //		delete_list(&stack_b);
 	}
 	return (0);

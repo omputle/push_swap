@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 02:34:16 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/06 23:47:06 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 07:04:41 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@
 # include "rules/rules.h"
 
 int		is_sorted(t_node **start);
+void	sort_three(t_node **stack_a);
+void	sort_five(t_node **stack_a, t_node **stack_b);
 
 #endif

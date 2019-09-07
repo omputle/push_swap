@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   delete_list.c                                      :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 02:30:45 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/07 06:34:25 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/06 23:45:03 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/07 07:07:58 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "linked_lists.h"
+#include "push_swap.h"
 
-static t_node	*delete_begin(t_node **list)
+int		is_sorted(t_node **start)
 {
 	t_node	*ptr;
+	t_node	*preptr;
 
-	ptr = (*list);
+	ptr = (*start)->next;
+	preptr = (*start);
 	if (ptr)
 	{
-		(*list) = (*list)->next;
-		(*list)->prev = NULL;
-		free(ptr);
+		while (ptr)
+		{
+			if (ptr->element < preptr->element)
+				return (0);
+			preptr = ptr;
+			ptr = ptr->next;
+		}
 	}
-	return (*list);
-}
-
-void		delete_list(t_node **list)
-{
-	t_node	*temp;
-
-	temp = (*list);
-	if (*list)
-	{
-		while (*list)
-			*list = delete_begin(list);
-	}
+	return (1);
 }
