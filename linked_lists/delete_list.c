@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   delete_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/17 10:32:43 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/07 02:10:11 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/07 02:30:45 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/07 02:40:55 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rules.h"
+#include "linked_lists.h"
 
-void	pb(t_node **stack_a, t_node **stack_b)
+static void	delete_begin(t_node **list)
 {
-	if (*stack_a)
-		push(stack_a, stack_b);
-	ft_putendl("pb");
+	t_node	*ptr;
+
+	ptr = (*list);
+	if (ptr)
+	{
+		(*list) = (*list)->next;
+		(*list)->prev = NULL;
+		free(ptr);
+	}
+}
+
+void		delete_list(t_node **list)
+{
+	while ((*list) != NULL)
+		delete_begin(list);
 }

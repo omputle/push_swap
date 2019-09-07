@@ -6,7 +6,7 @@
 #    By: omputle <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/27 02:52:32 by omputle           #+#    #+#              #
-#    Updated: 2019/09/03 12:04:46 by omputle          ###   ########.fr        #
+#    Updated: 2019/09/07 02:39:14 by omputle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ SRC = rules/rotate.c \
 	  rules/swap.c \
 	  linked_lists/create_list.c \
 	  linked_lists/display_list.c \
+	  linked_lists/list_length.c \
+	  linked_lists/delete_list.c \
 	  rules/push.c \
 	  linked_lists/add_node.c \
 	  linked_lists/delete_node.c \

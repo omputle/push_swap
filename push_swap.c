@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:52:58 by omputle           #+#    #+#             */
-/*   Updated: 2019/08/28 09:01:35 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/06 22:28:02 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int		mid_point(int n)
 	return (temp);
 }
 
-int		is_sorted(node **stack_A)
+int		is_sorted(node **stack_a)
 {
 	node	*ptr;
 	node	*preptr;
 
-	ptr = (*stack_A)->next;
-	preptr = (*stack_A);
+	ptr = (*stack_a)->next;
+	preptr = (*stack_a);
 	if (ptr)
 	{
 		while (ptr)
@@ -170,8 +170,8 @@ void	sort_any(node **stack_A, node **stack_B, int num)
 	while (push > 3)
 	{
 		find_min(stack_A);
-		if (is_sorted(stack_A) == 1)
-			break ;
+//		if (is_sorted(stack_A) == 1)
+//			break ;
 		ft_putendl("pb");
 		pb(stack_A, stack_B);
 		push--;

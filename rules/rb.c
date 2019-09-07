@@ -6,13 +6,14 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/17 10:17:57 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 09:53:31 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 02:12:10 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-void	rb(node **stack_B)
+void	rb(t_node **stack_b)
 {
-	rotate(stack_B);
+	rotate(stack_b);
+	ft_putendl("rb");
 }

@@ -6,7 +6,7 @@
 #    By: omputle <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/31 08:57:48 by omputle           #+#    #+#              #
-#    Updated: 2019/09/02 11:20:26 by omputle          ###   ########.fr        #
+#    Updated: 2019/09/06 11:17:34 by omputle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,13 @@ SRC = add_node.c \
 	  display_list.c \
 	  create_list.c \
 	  delete_node.c \
+	  list_length.c \
 
 OBJECT = add_node.o \
 		 display_list.o \
 		 create_list.o \
 		 delete_node.o \
+		 list_length.o \
 
 FLAGS = -Wall -Werror -Wextra
 

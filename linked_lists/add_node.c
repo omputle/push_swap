@@ -6,17 +6,17 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 09:21:09 by omputle           #+#    #+#             */
-/*   Updated: 2019/08/31 09:06:57 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/06 22:55:05 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_lists.h"
 
-void	add_node(node **start, int data)
+void	add_node(t_node **start, int data)
 {
-	node	*ptr;
+	t_node	*ptr;
 
-	ptr = (node*)malloc(sizeof(node) * 1);
+	ptr = (t_node*)malloc(sizeof(t_node) * 1);
 	if ((*start) == NULL)
 	{
 		ptr->prev = NULL;

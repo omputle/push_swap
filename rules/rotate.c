@@ -6,16 +6,16 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 12:41:19 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 09:53:59 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/06 23:06:04 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-void	rotate(node **start)
+void	rotate(t_node **start)
 {
-	node	*preptr;
-	node	*ptr;
+	t_node	*preptr;
+	t_node	*ptr;
 	int		data;
 
 	if ((*start) != NULL || (*start)->next != NULL)

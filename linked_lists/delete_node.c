@@ -6,15 +6,15 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 09:16:55 by omputle           #+#    #+#             */
-/*   Updated: 2019/08/31 09:07:24 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/06 22:48:41 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_lists.h"
 
-void	delete_node(node **start)
+void	delete_node(t_node **start)
 {
-	node	*ptr;
+	t_node	*ptr;
 
 	ptr = (*start);
 	if ((*start)->next)

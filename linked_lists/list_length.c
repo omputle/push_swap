@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   list_length.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/17 10:32:43 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/07 02:10:11 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/06 11:13:56 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/06 22:50:02 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rules.h"
+#include "linked_lists.h"
 
-void	pb(t_node **stack_a, t_node **stack_b)
+int		list_length(t_node **list)
 {
-	if (*stack_a)
-		push(stack_a, stack_b);
-	ft_putendl("pb");
+	int		len;
+	t_node	*ptr;
+
+	ptr = (*list);
+	len = 0;
+	while (ptr)
+	{
+		len++;
+		ptr = ptr->next;
+	}
+	return (len);
 }

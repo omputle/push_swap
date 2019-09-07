@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 08:53:06 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 11:31:06 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 02:37:29 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,18 @@
 # include <string.h>
 # include "../libft/libft.h"
 
-typedef	struct	node
+typedef	struct		s_list
 {
-	struct	node	*prev;
+	struct s_list	*prev;
 	int				element;
-	struct	node	*next;
-}					node;
+	struct s_list	*next;
+}					t_node;
 
-void	add_node(node **start, int data);
-node	*create_list(int n, char **av);
-void	delete_node(node **start);
-void	display_list(node *head);
+void	add_node(t_node **start, int data);
+t_node	*create_list(int n, char **av);
+void	delete_node(t_node **start);
+void	display_list(t_node *head);
+int		list_length(t_node **list);
+void	delete_list(t_node **list);
 
 #endif

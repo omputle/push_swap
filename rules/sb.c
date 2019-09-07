@@ -6,13 +6,14 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/17 09:38:30 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 09:55:44 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 02:14:21 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-void	sb(node **stack_B)
+void	sb(t_node **stack_b)
 {
-	swap(stack_B);
+	swap(stack_b);
+	ft_putendl("sb");
 }

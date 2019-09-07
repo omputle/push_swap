@@ -6,15 +6,15 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 02:28:07 by omputle           #+#    #+#             */
-/*   Updated: 2019/08/31 09:07:40 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/06 22:49:29 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_lists.h"
 
-void	display_list(node *start)
+void	display_list(t_node *start)
 {
-	node	*ptr;
+	t_node	*ptr;
 
 	ptr = start;
 	if (ptr != NULL)

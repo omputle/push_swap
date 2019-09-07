@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 09:25:52 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 09:33:31 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/06 23:16:55 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 # include "../linked_lists/linked_lists.h"
 
-void	pa(node **stack_B, node **stack_A);
-void	pb(node **stack_A, node **stack_B);
-void	push(node **pusher, node **taker);
-void	ra(node **stack_A);
-void	rb(node **stack_B);
-void	reverse_rotate(node **start);
-void	rotate(node **start);
-void	rr(node **stack_A, node **stack_B);
-void	rra(node **stack_A);
-void	rrb(node **stack_B);
-void	rrr(node **stack_A, node **stack_B);
-void	sa(node **stack_A);
-void	sb(node **stack_B);
-void	ss(node **stack_A, node **stack_B);
-void	swap(node **start);
+void	pa(t_node **stack_b, t_node **stack_a);
+void	pb(t_node **stack_a, t_node **stack_b);
+void	push(t_node **pusher, t_node **taker);
+void	ra(t_node **stack_a);
+void	rb(t_node **stack_b);
+void	reverse_rotate(t_node **start);
+void	rotate(t_node **start);
+void	rr(t_node **stack_a, t_node **stack_b);
+void	rra(t_node **stack_a);
+void	rrb(t_node **stack_a);
+void	rrr(t_node **stack_a, t_node **stack_b);
+void	sa(t_node **stack_a);
+void	sb(t_node **stack_b);
+void	ss(t_node **stack_a, t_node **stack_b);
+void	swap(t_node **start);
 
 #endif

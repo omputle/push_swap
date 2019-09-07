@@ -6,14 +6,15 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/17 10:18:51 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 09:54:18 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 02:12:37 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-void	rr(node **stack_A, node **stack_B)
+void	rr(t_node **stack_a, t_node **stack_b)
 {
-	ra(stack_A);
-	rb(stack_B);
+	ra(stack_a);
+	rb(stack_b);
+	ft_putendl("rr");
 }

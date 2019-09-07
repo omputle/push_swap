@@ -6,14 +6,15 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/17 10:31:04 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 09:52:20 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 02:07:48 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-void	pa(node **stack_B, node **stack_A)
+void	pa(t_node **stack_b, t_node **stack_a)
 {
-	if (*stack_B)
-		push(stack_B, stack_A);
+	if (*stack_b)
+		push(stack_b, stack_a);
+	ft_putendl("pa");
 }

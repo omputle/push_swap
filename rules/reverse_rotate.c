@@ -6,16 +6,16 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 12:42:01 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 09:53:47 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/06 23:02:34 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-void	reverse_rotate(node **start)
+void	reverse_rotate(t_node **start)
 {
-	node	*preptr;
-	node	*ptr;
+	t_node	*preptr;
+	t_node	*ptr;
 	int		last;
 
 	if ((*start) != NULL || (*start)->next != NULL)

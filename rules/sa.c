@@ -6,13 +6,14 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/17 09:32:18 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/02 09:55:29 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/07 02:14:00 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-void	sa(node **stack_A)
+void	sa(t_node **stack_a)
 {
-	swap(stack_A);
+	swap(stack_a);
+	ft_putendl("sa");
 }

@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 10:17:33 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/03 08:31:15 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/06 23:35:53 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-int     ft_isnum(char *str);
+int		ft_isnum(char *str);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 char	*ft_strchr(const char *s, int c);
@@ -71,5 +71,6 @@ char	**ft_strsplit(char const *s, char c);
 void	ft_strclr(char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t n);
 int		ft_isnum(char *str);
+int		ab_value(int num);
 
 #endif

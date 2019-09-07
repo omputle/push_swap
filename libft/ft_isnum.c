@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 15:20:40 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/03 08:32:27 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/04 11:51:21 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int		ft_isnum(char *str)
 	count = 0;
 	while (str[count] != '\0')
 	{
+		if (str[count] == '+' || str[count] == '-')
+			count++;
 		if (ft_isdigit(str[count]) == 0)
 			return (0);
 		count++;

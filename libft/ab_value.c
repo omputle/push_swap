@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   ab_value.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/17 10:32:43 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/07 02:10:11 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/04 11:52:43 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/04 11:54:20 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rules.h"
+#include "libft.h"
 
-void	pb(t_node **stack_a, t_node **stack_b)
+int		ab_value(int num)
 {
-	if (*stack_a)
-		push(stack_a, stack_b);
-	ft_putendl("pb");
+	if (num < 0)
+		return (num * -1);
+	else
+		return (num);
 }
