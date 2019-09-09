@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   find_max.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/17 10:32:43 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 16:16:11 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/09 17:14:59 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/09 17:15:38 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rules.h"
+#include "push_swap.h"
 
-void	pb(t_node **stack_a, t_node **stack_b)
+int		find_max(t_node **stack)
 {
-	if (*stack_a)
-		push(stack_a, stack_b);
-	ft_putendl("pb");
+	int		max;
+	t_node	*ptr;
+
+	ptr = (*stack);
+	max = ptr->element;
+	while (ptr)
+	{
+		if (max < ptr->element)
+			max = ptr->element;
+		ptr = ptr->next;
+	}
+	return (max);
 }

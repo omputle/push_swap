@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   mid_point.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/17 10:32:43 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 16:16:11 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/09 17:16:09 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/09 17:16:37 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rules.h"
+#include "push_swap.h"
 
-void	pb(t_node **stack_a, t_node **stack_b)
+int		mid_point(int n)
 {
-	if (*stack_a)
-		push(stack_a, stack_b);
-	ft_putendl("pb");
+	int	temp;
+
+	temp = 0;
+	if (n % 2 != 0)
+		n = n + 1;
+	temp = n / 2;
+	return (temp);
 }

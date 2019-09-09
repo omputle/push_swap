@@ -6,21 +6,37 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 14:15:00 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 16:08:30 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/09 17:18:52 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		mid_point(int n)
+void	move_node(t_node **stack, int pos)
 {
-	int	temp;
+	int		len;
 
-	temp = 0;
-	if (n % 2 != 0)
-		n = n + 1;
-	temp = n / 2;
-	return (temp);
+	len = list_length(stack);
+	if (pos == 1)
+		return ;
+	else if (pos == 2)
+		sa(stack);
+	else if (pos <= mid_point(len))
+	{
+		while (pos > 1)
+		{
+			ra(stack);
+			pos--;
+		}
+	}
+	else
+	{
+		while (pos < len + 1)
+		{
+			rra(stack);
+			pos++;
+		}
+	}
 }
 
 int		find_node(t_node **stack_a, int check)
@@ -60,72 +76,47 @@ int		find_node(t_node **stack_a, int check)
 		pos = pos2;
 	if (pos == 0)
 		return (0);
-	else if (pos == 1)
-		return (1);
+	else
+		move_node(stack_a, pos);
+	return (1);
+}
+
+void	move_to_top(t_node **stack, int pos)
+{
+	int		len;
+
+	len = list_length(stack);
+	if (pos == 1)
+		return ;
 	else if (pos == 2)
-	{
-		sa(stack_a);
-		return (1);
-	}
-	else if (pos <= mid_point(list_length(stack_a)))
+		sb(stack);
+	else if (pos <= mid_point(len))
 	{
 		while (pos > 1)
 		{
-			ra(stack_a);
+			rb(stack);
 			pos--;
 		}
-		return (1);
 	}
 	else
 	{
-		while (pos < list_length(stack_a) + 1)
+		while (pos < len + 1)
 		{
-			rra(stack_a);
+			rrb(stack);
 			pos++;
 		}
-		return (1);
 	}
-}
-
-int		find_min(t_node **stack)
-{
-	int		max;
-	t_node	*ptr;
-
-	ptr = (*stack);
-	max = ptr->element;
-	while (ptr)
-	{
-		if (max > ptr->element)
-			max = ptr->element;
-		ptr = ptr->next;
-	}
-	return (max);
-}
-
-int		find_max(t_node **stack)
-{
-	int		max;
-	t_node	*ptr;
-
-	ptr = (*stack);
-	max = ptr->element;
-	while (ptr)
-	{
-		if (max < ptr->element)
-			max = ptr->element;
-		ptr = ptr->next;
-	}
-	return (max);
 }
 
 void	bring_back(t_node **stack_b)
 {
 	t_node	*ptr;
 	int		data;
-	int		count = 2;
-	int		pos = 1;
+	int		count;
+	int		pos;
 
+	count = 2;
+	pos = 1;
 	if ((*stack_b))
 	{
 		ptr = (*stack_b)->next;
@@ -140,28 +131,7 @@ void	bring_back(t_node **stack_b)
 			ptr = ptr->next;
 			count++;
 		}
-		if (pos == 1)
-			return ;
-		else if (pos == 2)
-		{
-			sb(stack_b);
-		}
-		else if (pos <= mid_point(count))
-		{
-			while (pos > 1)
-			{
-				rb(stack_b);
-				pos--;
-			}
-		}
-		else
-		{
-			while (pos < count)
-			{
-				rrb(stack_b);
-				pos++;
-			}
-		}
+		move_to_top(stack_b, pos);
 	}
 }
 
@@ -186,53 +156,9 @@ void	sort(t_node **stack_a, t_node **stack_b, int div)
 		}
 		chunk_num++;
 	}
-	ft_putendl("Stack A");
-	display_list(*stack_a);
-	ft_putendl("Stack B");
-	display_list(*stack_b);
-	ft_putchar('\n');
 	while (list_length(stack_b) > 0)
 	{
 		bring_back(stack_b);
 		pa(stack_b, stack_a);
 	}
 }
-
-int		main(int ac, char **av)
-{
-	t_node	*stack_a = NULL;
-	t_node	*stack_b = NULL;
-	if (ac == 1)
-		ft_putendl("Error");
-	else if (ac > 1)
-	{
-		stack_a = create_list(ac - 1, av);
-		if (is_sorted(&stack_a) == 0)
-		{
-			if (ac == 2)
-				return (0);
-			else if (ac == 4)
-				sort_three(&stack_a);
-			else if (ac == 6)
-				sort_five(&stack_a, &stack_b);
-			else if (ac > 6)
-				sort_hundred(&stack_a, &stack_b);
-		}
-		ft_putendl("Stack A");
-		display_list(stack_a);
-		ft_putendl("Stack B");
-		display_list(stack_b);
-//		delete_list(&stack_a);
-//		delete_list(&stack_b);
-	}
-	return (0);
-}
-
-
-
-
-
-
-
-
-

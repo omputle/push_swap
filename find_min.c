@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   find_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/17 10:32:43 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 16:16:11 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/09 17:13:14 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/09 17:14:24 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rules.h"
+#include "push_swap.h"
 
-void	pb(t_node **stack_a, t_node **stack_b)
+int		find_min(t_node **stack)
 {
-	if (*stack_a)
-		push(stack_a, stack_b);
-	ft_putendl("pb");
+	int		min;
+	t_node	*ptr;
+
+	ptr = (*stack);
+	min = ptr->element;
+	while (ptr)
+	{
+		if (min > ptr->element)
+			min = ptr->element;
+		ptr = ptr->next;
+	}
+	return (min);
 }
