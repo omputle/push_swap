@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap_both.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/05 16:12:45 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 11:56:10 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/09 11:19:36 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/09 11:21:17 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-void	push(t_node **pusher, t_node **taker)
+void	swap_both(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*ptr;
-
-	ptr = (*pusher)->next;
-	(*pusher)->next = (*taker);
-	(*taker)->prev = (*pusher);
-	ptr->prev = NULL;
-	(*taker) = (*pusher);
-	(*pusher) = ptr;
+	swap(stack_a);
+	swap(stack_b);
 }

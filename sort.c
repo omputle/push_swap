@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 14:15:00 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/07 10:29:17 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/09 16:08:30 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,15 +165,13 @@ void	bring_back(t_node **stack_b)
 	}
 }
 
-void	sort_hundred(t_node **stack_a, t_node **stack_b)
+void	sort(t_node **stack_a, t_node **stack_b, int div)
 {
 	int		min;
 	int		max;
 	int		chunk_size;
 	int		chunk_num;
-	int		div;
 
-	div = 5;
 	min = find_min(stack_a);
 	max = find_max(stack_a);
 	chunk_size = ((max - min) / div) + 1;

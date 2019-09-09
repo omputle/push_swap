@@ -6,7 +6,7 @@
 #    By: omputle <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/02 09:33:40 by omputle           #+#    #+#              #
-#    Updated: 2019/09/02 11:16:28 by omputle          ###   ########.fr        #
+#    Updated: 2019/09/09 11:36:59 by omputle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,9 @@ SRC =	pa.c \
 		sb.c \
 		ss.c \
 		swap.c \
+		swap_both.c \
+		rotate_both.c \
+		reverse_rotate_both.c \
 
 OBJECT =	pa.o \
 			pb.o \
@@ -45,6 +48,9 @@ OBJECT =	pa.o \
 			sb.o \
 			ss.o \
 			swap.o \
+			swap_both.o \
+			rotate_both.o \
+			reverse_rotate_both.o \
 
 FLAGS = -Wall -Werror -Wextra
 

@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 03:02:15 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/06 23:15:44 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/09 10:04:22 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_node	*create_list(int n, char **av)
 		}
 		else
 		{
-			add_node(&start, ft_atoi(av[count + 1]));
+			add_end(&start, ft_atoi(av[count + 1]));
 		}
 		count++;
 	}

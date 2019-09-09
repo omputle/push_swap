@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 09:25:52 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/06 23:16:55 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/09 11:38:31 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ void	sa(t_node **stack_a);
 void	sb(t_node **stack_b);
 void	ss(t_node **stack_a, t_node **stack_b);
 void	swap(t_node **start);
+void	swap_both(t_node **stack_a, t_node **stack_b);
+void	rotate_both(t_node **stack_a, t_node **stack_b);
+void	reverse_rotate_both(t_node **stack_a, t_node **stack_b);
 
 #endif

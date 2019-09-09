@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 08:53:06 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/07 02:37:29 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/09 10:08:30 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	delete_node(t_node **start);
 void	display_list(t_node *head);
 int		list_length(t_node **list);
 void	delete_list(t_node **list);
+void	add_end(t_node **start, int data);
 
 #endif

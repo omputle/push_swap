@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   add_end.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/05 16:12:45 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 11:56:10 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/09 09:41:51 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/09 10:13:08 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rules.h"
+#include "linked_lists.h"
 
-void	push(t_node **pusher, t_node **taker)
+void	add_end(t_node **start, int data)
 {
 	t_node	*ptr;
+	t_node	*temp;
 
-	ptr = (*pusher)->next;
-	(*pusher)->next = (*taker);
-	(*taker)->prev = (*pusher);
-	ptr->prev = NULL;
-	(*taker) = (*pusher);
-	(*pusher) = ptr;
+	ptr = (t_node*)malloc(sizeof(t_node) * 1);
+	if ((*start) == NULL)
+	{
+		ptr->prev = NULL;
+		ptr->element = data;
+		ptr->next = NULL;
+		(*start) = ptr;
+	}
+	else
+	{
+		temp = (*start);
+		while (temp->next)
+			temp = temp->next;
+		ptr->element = data;
+		temp->next = ptr;
+		ptr->prev = temp;
+		ptr->next = NULL;
+	}
 }
