@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 03:02:15 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 10:04:22 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/10 08:12:46 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_node	*create_node(char *str)
 	return (node);
 }
 
-t_node	*create_list(int n, char **av)
+t_node			*create_list(int n, char **av)
 {
 	int		count;
 	t_node	*start;

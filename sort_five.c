@@ -6,23 +6,25 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 06:40:55 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 17:27:21 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/10 09:04:42 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	find_min_val(t_node **stack_A)
+static void	find_min_val(t_node **stack_a)
 {
 	t_node	*ptr;
 	int		data;
-	int		count = 2;
-	int		pos = 1;
+	int		count;
+	int		pos;
 
-	if ((*stack_A)->next && (*stack_A)->next->next && (*stack_A)->next->next->next)
+	pos = 1;
+	count = 2;
+	if (list_length(stack_a) > 3)
 	{
-		ptr = (*stack_A)->next;
-		data = (*stack_A)->element;
+		ptr = (*stack_a)->next;
+		data = (*stack_a)->element;
 		while (ptr)
 		{
 			if (data > ptr->element)
@@ -33,32 +35,11 @@ static void	find_min_val(t_node **stack_A)
 			ptr = ptr->next;
 			count++;
 		}
-		if (pos == 1)
-			return ;
-		else if (pos == 2)
-		{
-			sa(stack_A);
-		}
-		else if (pos <= mid_point(count))
-		{
-			while (pos > 1)
-			{
-				ra(stack_A);
-				pos--;
-			}
-		}
-		else
-		{
-			while (pos < count)
-			{
-				rra(stack_A);
-				pos++;
-			}
-		}
+		move_node(stack_a, pos);
 	}
 }
 
-void	sort_five(t_node **stack_a, t_node **stack_b)
+void		sort_five(t_node **stack_a, t_node **stack_b)
 {
 	find_min_val(stack_a);
 	pb(stack_a, stack_b);

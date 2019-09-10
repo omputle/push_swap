@@ -6,7 +6,7 @@
 #    By: omputle <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/27 02:52:32 by omputle           #+#    #+#              #
-#    Updated: 2019/09/09 17:29:54 by omputle          ###   ########.fr        #
+#    Updated: 2019/09/10 09:48:45 by omputle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ SRC = rules/rotate.c \
 	  find_min.c \
 	  find_max.c \
 	  mid_point.c \
+	  move_node.c \
+	  last_node.c \
 	  sort.c \
 	  push_swap.c \
 	  sort_three.c \

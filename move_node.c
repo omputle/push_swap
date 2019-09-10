@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   delete_node.c                                      :+:      :+:    :+:   */
+/*   move_node.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 09:16:55 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 08:13:21 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/10 09:01:39 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/10 09:02:54 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "linked_lists.h"
+#include "push_swap.h"
 
-void	delete_node(t_node **start)
+void	move_node(t_node **stack, int pos)
 {
-	t_node	*ptr;
+	int		len;
 
-	ptr = (*start);
-	if ((*start)->next)
+	len = list_length(stack);
+	if (pos == 1)
+		return ;
+	else if (pos == 2)
+		sa(stack);
+	else if (pos <= mid_point(len))
 	{
-		(*start) = (*start)->next;
-		(*start)->prev = NULL;
-		free(ptr);
+		while (pos > 1)
+		{
+			ra(stack);
+			pos--;
+		}
 	}
 	else
 	{
-		(*start) = NULL;
+		while (pos < len + 1)
+		{
+			rra(stack);
+			pos++;
+		}
 	}
 }

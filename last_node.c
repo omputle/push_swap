@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   delete_node.c                                      :+:      :+:    :+:   */
+/*   last_node.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 09:16:55 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 08:13:21 by omputle          ###   ########.fr       */
+/*   Created: 2019/09/10 09:43:04 by omputle           #+#    #+#             */
+/*   Updated: 2019/09/10 09:46:56 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "linked_lists.h"
+#include "push_swap.h"
 
-void	delete_node(t_node **start)
+t_node	*last_node(t_node **stack)
 {
 	t_node	*ptr;
 
-	ptr = (*start);
-	if ((*start)->next)
+	ptr = (*stack);
+	while (ptr->next)
 	{
-		(*start) = (*start)->next;
-		(*start)->prev = NULL;
-		free(ptr);
+		ptr = ptr->next;
 	}
-	else
-	{
-		(*start) = NULL;
-	}
+	return (ptr);
 }

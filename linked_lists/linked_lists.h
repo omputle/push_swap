@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 08:53:06 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 10:08:30 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/10 08:17:55 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_node;
 
-void	add_node(t_node **start, int data);
-t_node	*create_list(int n, char **av);
-void	delete_node(t_node **start);
-void	display_list(t_node *head);
-int		list_length(t_node **list);
-void	delete_list(t_node **list);
-void	add_end(t_node **start, int data);
+void				add_node(t_node **start, int data);
+t_node				*create_list(int n, char **av);
+void				delete_node(t_node **start);
+void				display_list(t_node *head);
+int					list_length(t_node **list);
+void				delete_list(t_node **list);
+void				add_end(t_node **start, int data);
 
 #endif
