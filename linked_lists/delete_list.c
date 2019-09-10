@@ -6,22 +6,30 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 02:30:45 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 09:05:46 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/10 17:15:22 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_lists.h"
 
-void			delete_list(t_node **list)
+static t_node	**delete_beg(t_node **list)
 {
 	t_node	*ptr;
 
 	ptr = (*list);
-	if (ptr)
+	(*list) = (*list)->next;
+	(*list)->prev = NULL;
+	free(ptr);
+	return (list);
+}
+
+void			delete_list(t_node **list)
+{
+	if (*list)
 	{
-		while (ptr)
+		while ((*list) != NULL)
 		{
-			delete_node(&ptr);
+			list = delete_beg(list);
 		}
 	}
 }

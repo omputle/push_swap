@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 02:34:16 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 09:47:23 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/10 16:22:37 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		find_min(t_node **stack);
 int		mid_point(int n);
 void	move_node(t_node **stack, int pos);
 t_node	*last_node(t_node **stack);
+int		find_node_any(t_node **stack, int check);
 
 #endif

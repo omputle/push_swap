@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:52:58 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 09:20:41 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/10 17:30:21 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ int		main(int ac, char **av)
 				sort(&stack_a, &stack_b, 11);
 		}
 	}
-	display_list(stack_a);
+	while (1)
+	{
+
+	}
 	return (0);
 }
