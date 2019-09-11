@@ -6,56 +6,11 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 14:15:00 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 12:25:25 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/10 16:28:21 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int		find_pos(t_node **stack, int pos1, int pos2)
-{
-	int		pos;
-
-	if (pos2 < pos1)
-		return (0);
-	else if (pos1 - 1 <= list_length(stack) + 1 - pos2)
-		pos = pos1;
-	else
-		pos = pos2;
-	return (pos);
-}
-
-int		find_node(t_node **stack_a, int check)
-{
-	t_node	*ptr;
-	int		pos1;
-	int		pos2;
-	int		pos;
-
-	pos1 = 0;
-	if ((pos2 = list_length(stack_a)) < 1)
-		return (0);
-	ptr = last_node(stack_a);
-	while (ptr)
-	{
-		if (ptr->element < check)
-			break ;
-		ptr = ptr->prev;
-		pos2--;
-	}
-	ptr = (*stack_a);
-	while (ptr)
-	{
-		pos1++;
-		if (ptr->element < check)
-			break ;
-		ptr = ptr->next;
-	}
-	if ((pos = find_pos(stack_a, pos1, pos2) == 0))
-		return (0);
-	move_node(stack_a, pos);
-	return (1);
-}
 
 void	move_to_top(t_node **stack, int pos)
 {
@@ -124,7 +79,7 @@ void	sort(t_node **stack_a, t_node **stack_b, int div)
 	c_num = 1;
 	while (c_num <= div)
 	{
-		while (find_node(stack_a, min + c_size * c_num) == 1)
+		while (find_node_any(stack_a, min + c_size * c_num) == 1)
 		{
 			if (list_length(stack_a) == 0)
 				break ;
