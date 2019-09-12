@@ -6,7 +6,7 @@
 #    By: omputle <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/31 08:57:48 by omputle           #+#    #+#              #
-#    Updated: 2019/09/09 10:06:17 by omputle          ###   ########.fr        #
+#    Updated: 2019/09/12 10:50:49 by omputle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CC = gcc
 SRC = add_node.c \
 	  display_list.c \
 	  create_list.c \
+	  delete_list.c \
 	  delete_node.c \
 	  list_length.c \
 	  add_end.c \
@@ -24,6 +25,7 @@ SRC = add_node.c \
 OBJECT = add_node.o \
 		 display_list.o \
 		 create_list.o \
+		 delete_list.o \
 		 delete_node.o \
 		 list_length.o \
 		 add_end.o \

@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:52:31 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/09 16:00:03 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/12 11:38:10 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	read_rules(t_node **stack_a, t_node **stack_b)
 	while (get_next_line(0, &line) == 1)
 	{
 		execute_rule(line, stack_a, stack_b);
+		free(line);
+		line = NULL;
 	}
 }
 
@@ -59,7 +61,7 @@ int		main(int ac, char **av)
 	if (ac > 1)
 	{
 		stack_a = create_list(ac - 1, av);
-		if (repeats(&stack_a) == 1 || stack_a == NULL)
+		if (repeats(stack_a) == 1 || stack_a == NULL)
 		{
 			ft_putendl("Error");
 			return (0);
@@ -69,10 +71,9 @@ int		main(int ac, char **av)
 			ft_putendl("OK");
 		else
 			ft_putendl("KO");
+		display_list(stack_a);
 	}
 	else
 		ft_putendl("Error");
-	free(stack_a);
-	free(stack_b);
 	return (0);
 }

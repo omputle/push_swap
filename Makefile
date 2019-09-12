@@ -6,32 +6,14 @@
 #    By: omputle <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/27 02:52:32 by omputle           #+#    #+#              #
-#    Updated: 2019/09/11 16:32:14 by omputle          ###   ########.fr        #
+#    Updated: 2019/09/12 11:01:32 by omputle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = rules/rotate.c \
-	  rules/reverse_rotate.c \
-	  rules/swap.c \
-	  linked_lists/create_list.c \
-	  linked_lists/display_list.c \
-	  linked_lists/list_length.c \
-	  linked_lists/delete_list.c \
-	  rules/push.c \
-	  linked_lists/add_node.c \
-	  linked_lists/delete_node.c \
-	  rules/sa.c \
-	  rules/sb.c \
-	  rules/ss.c \
-	  rules/ra.c \
-	  rules/rb.c \
-	  rules/rr.c \
-	  rules/rra.c \
-	  rules/rrb.c \
-	  rules/rrr.c \
-	  rules/pa.c \
-	  rules/pb.c \
-	  is_sorted.c \
+NAME1 = push_swap
+NAME2 = checker
+
+SRC1 = is_sorted.c \
 	  find_min.c \
 	  find_max.c \
 	  mid_point.c \
@@ -44,21 +26,33 @@ SRC = rules/rotate.c \
 	  sort_five.c \
 	  get_next_line.c \
 
-CC = gcc
+SRC2 = 	checker.c \
+	  	get_next_line.c \
+		repeats.c \
+		is_sorted.c \
 
-FLAGS = -Wall -Werror -Wextra
+CC = gcc -Wall -Werror -Wextra -o
 
-all: test
 
-test: $(SRC)
-	make -C libft/ && make -C linked_lists/ && make -C rules/
-	$(CC) $(SRC) $(FLAGS) libft/libft.a linked_lists/linked_lists.a rules/rules.a -o test
+all: $(NAME1) $(NAME2)
+
+
+$(NAME1): lib
+		$(CC) $(NAME1) libft/libft.a linked_lists/linked_lists.a rules/rules.a $(SRC1)
+
+$(NAME2): lib
+		$(CC) $(NAME2) libft/libft.a linked_lists/linked_lists.a rules/rules.a $(SRC2)
+
+lib:
+		make -C libft/ && make -C linked_lists/ && make -C rules/
+
+
 
 fclean:
 	make -C libft/ fclean
 	make -C linked_lists/ fclean
 	make -C rules/ fclean
-	rm -r test
+	rm -r $(NAME1) $(NAME2)
 
 norm:
 	norminette -R CheckForbiddenSourceHeader

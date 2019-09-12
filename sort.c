@@ -6,13 +6,13 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 14:15:00 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 16:28:21 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/12 15:25:12 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	move_to_top(t_node **stack, int pos)
+static void	move_to_top(t_node **stack, int pos)
 {
 	int		len;
 
@@ -39,7 +39,7 @@ void	move_to_top(t_node **stack, int pos)
 	}
 }
 
-void	bring_back(t_node **stack_b)
+static void	bring_back(t_node **stack_b)
 {
 	t_node	*ptr;
 	int		data;

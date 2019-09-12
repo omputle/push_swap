@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 16:21:30 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 16:27:10 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/12 16:12:19 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,14 @@ static int		node_bottom(t_node **stack, int check)
 	t_node	*ptr;
 	int		pos2;
 
-	ptr = last_node(stack);
+//	ptr = last_node(stack);
 	pos2 = list_length(stack);
+	ptr = (*stack);
 	while (ptr)
 	{
 		if (ptr->element < check)
 			break ;
-		ptr = ptr->prev;
+		ptr = ptr->next;
 		pos2--;
 	}
 	return (pos2);
