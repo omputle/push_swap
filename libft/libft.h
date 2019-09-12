@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 10:17:33 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/06 23:35:53 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/12 10:16:16 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void	ft_strclr(char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t n);
 int		ft_isnum(char *str);
 int		ab_value(int num);
+void	ft_del_arr(char **arr);
 
 #endif

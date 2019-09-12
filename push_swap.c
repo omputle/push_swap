@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:52:58 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 17:30:21 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/12 10:23:02 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,22 @@ int		main(int ac, char **av)
 	else if (ac > 1)
 	{
 		stack_a = create_list(ac - 1, av);
+		display_list(stack_a);
+		ft_putnbr(list_length(&stack_a));
 		if (is_sorted(&stack_a) == 0)
 		{
-			if (ac == 4)
+			if (list_length(&stack_a) == 3)
 				sort_three(&stack_a);
-			else if (ac == 6)
+			else if (list_length(&stack_a) == 5)
 				sort_five(&stack_a, &stack_b);
-			else if (ac > 6 && ac < 500)
+			else if (list_length(&stack_a) > 5 && list_length(&stack_a) < 500)
 				sort(&stack_a, &stack_b, 5);
-			else if (ac >= 500)
+			else if (list_length(&stack_a) >= 500)
 				sort(&stack_a, &stack_b, 11);
 		}
 	}
+	display_list(stack_a);
+	delete_list(&stack_a);
 	while (1)
 	{
 

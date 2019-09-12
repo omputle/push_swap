@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 03:02:15 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 08:12:46 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/12 10:34:19 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static t_node	*create_node(char *str)
 t_node			*create_list(int n, char **av)
 {
 	int		count;
+	int		j;
+	char	**arr;
 	t_node	*start;
 	t_node	*temp;
 
@@ -35,17 +37,21 @@ t_node			*create_list(int n, char **av)
 	count = 0;
 	while (count < n)
 	{
-		temp = create_node(av[count + 1]);
-		if (ft_isnum(av[count + 1]) == 0)
-			return (NULL);
-		if (start == NULL)
+		arr = ft_strsplit(av[count + 1], ' ');
+		j = 0;
+		while (arr[j] != NULL)
 		{
-			start = temp;
+			if (ft_isnum(arr[j]) == 0)
+				return (NULL);
+			temp = create_node(arr[j]);
+			if (start == NULL)
+				start = temp;
+			else
+				add_end(&start, temp);
+			delete_node(&temp);
+			j++;
 		}
-		else
-		{
-			add_end(&start, ft_atoi(av[count + 1]));
-		}
+		ft_del_arr(arr);
 		count++;
 	}
 	return (start);
