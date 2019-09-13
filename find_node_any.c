@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 16:21:30 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/12 16:12:19 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/13 16:08:17 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ static int		node_top(t_node **stack, int check)
 	t_node	*ptr;
 	int		pos1;
 
-	pos1 = 1;
+	pos1 = 0;
 	ptr = (*stack);
 	while (ptr)
 	{
+		pos1++;
 		if (ptr->element < check)
 			break ;
 		ptr = ptr->next;
-		pos1++;
 	}
 	return (pos1);
 }
@@ -47,14 +47,14 @@ static int		node_bottom(t_node **stack, int check)
 	t_node	*ptr;
 	int		pos2;
 
-//	ptr = last_node(stack);
+	ptr = last_node(stack);
 	pos2 = list_length(stack);
-	ptr = (*stack);
+//	ptr = (*stack);
 	while (ptr)
 	{
 		if (ptr->element < check)
 			break ;
-		ptr = ptr->next;
+		ptr = ptr->prev;
 		pos2--;
 	}
 	return (pos2);
@@ -70,7 +70,7 @@ int				find_node_any(t_node **stack, int check)
 		return (0);
 	pos1 = node_top(stack, check);
 	pos2 = node_bottom(stack, check);
-	if ((pos = find_pos(stack, pos1, pos2) == 0))
+	if ((pos = find_pos(stack, pos1, pos2)) == 0)
 		return (0);
 	move_node(stack, pos);
 	return (1);
