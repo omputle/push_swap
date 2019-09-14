@@ -6,13 +6,13 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 06:39:53 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/10 08:20:25 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/14 03:14:48 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_node **stack_a)
+static void	three(t_node **stack_a)
 {
 	int		first;
 	int		second;
@@ -37,4 +37,18 @@ void	sort_three(t_node **stack_a)
 		rra(stack_a);
 		sa(stack_a);
 	}
+}
+
+static void	two(t_node **stack_a)
+{
+	if ((*stack_a)->element > (*stack_a)->next->element)
+		sa(stack_a);
+}
+
+void		sort_three(t_node **stack_a)
+{
+	if (list_length(stack_a) == 3)
+		three(stack_a);
+	else
+		two(stack_a);
 }
