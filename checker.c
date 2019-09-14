@@ -6,13 +6,13 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:52:31 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/12 11:38:10 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/14 01:57:12 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	execute_rule(char *str, t_node **stack_a, t_node **stack_b)
+void	execute_ruler(char *str, t_node **stack_a, t_node **stack_b)
 {
 	if (ft_strcmp("sa", str) == 0)
 		swap(stack_a);
@@ -38,17 +38,22 @@ void	execute_rule(char *str, t_node **stack_a, t_node **stack_b)
 		push(stack_a, stack_b);
 }
 
-void	read_rules(t_node **stack_a, t_node **stack_b)
+int		read_rules(t_node **stack_a, t_node **stack_b)
 {
 	char	*line;
 
 	line = NULL;
 	while (get_next_line(0, &line) == 1)
 	{
-		execute_rule(line, stack_a, stack_b);
+		execute_ruler(line, stack_a, stack_b);
 		free(line);
 		line = NULL;
 	}
+	if ((is_sorted(stack_a) == 1) && list_length(stack_b) == 0)
+		ft_putendl("OK");
+	else
+		ft_putendl("KO");
+	return (1);
 }
 
 int		main(int ac, char **av)
@@ -66,14 +71,10 @@ int		main(int ac, char **av)
 			ft_putendl("Error");
 			return (0);
 		}
-		read_rules(&stack_a, &stack_a);
-		if ((is_sorted(&stack_a) == 1) && (stack_b) == NULL)
-			ft_putendl("OK");
-		else
-			ft_putendl("KO");
-		display_list(stack_a);
+		read_rules(&stack_a, &stack_b);
 	}
 	else
 		ft_putendl("Error");
+	delete_list(&stack_a);
 	return (0);
 }

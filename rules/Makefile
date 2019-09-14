@@ -6,7 +6,7 @@
 #    By: omputle <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/02 09:33:40 by omputle           #+#    #+#              #
-#    Updated: 2019/09/09 11:36:59 by omputle          ###   ########.fr        #
+#    Updated: 2019/09/14 00:22:59 by omputle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ CC = gcc
 SRC =	pa.c \
 		pb.c \
 		push.c \
+		push_a.c \
+		push_b.c \
 		ra.c \
 		rb.c \
 		reverse_rotate.c \
@@ -36,6 +38,8 @@ SRC =	pa.c \
 OBJECT =	pa.o \
 			pb.o \
 			push.o \
+			push_a.o \
+			push_b.o \
 			ra.o \
 			rb.o \
 			reverse_rotate.o \

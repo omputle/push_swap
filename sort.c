@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 14:15:00 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/13 15:55:12 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/13 16:11:25 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	bring_back(t_node **stack_b)
 	}
 }
 
-void	sort(t_node **stack_a, t_node **stack_b, int div)
+void		sort(t_node **stack_a, t_node **stack_b, int div)
 {
 	int		min;
 	int		max;
