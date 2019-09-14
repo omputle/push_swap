@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 03:02:15 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/14 02:18:56 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/14 08:33:55 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_node			*create_list(int n, char **av)
 		j = 0;
 		while (arr[j] != NULL)
 		{
-			if (ft_isnum(arr[j]) == 0)
+			if (arg_error(arr) == 0)
 				return (NULL);
 			temp = create_node(arr[j]);
 			add_end(&start, temp);
