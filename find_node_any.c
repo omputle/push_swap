@@ -6,12 +6,14 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 16:21:30 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/14 01:59:16 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/15 10:02:23 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*Compares the positions of the locations of the values that are less than "check" from the top and bottom
+ * It then returns the node postion if the value which will require the least moves between the two*/
 static int		find_pos(t_node **stack, int pos1, int pos2)
 {
 	int		pos;
@@ -25,6 +27,8 @@ static int		find_pos(t_node **stack, int pos1, int pos2)
 	return (pos);
 }
 
+/*Finds the first value below the variable "check" and returns its position in the stack
+ * The search is done starting from the top of the stack*/
 static int		node_top(t_node **stack, int check)
 {
 	t_node	*ptr;
@@ -42,6 +46,8 @@ static int		node_top(t_node **stack, int check)
 	return (pos1);
 }
 
+/*Finds the first value below the variable "check" and returns its position in the stack
+ * The search is done starting from the bottom of the stack*/
 static int		node_bottom(t_node **stack, int check)
 {
 	t_node	*ptr;
@@ -59,6 +65,8 @@ static int		node_bottom(t_node **stack, int check)
 	return (pos2);
 }
 
+/*This function takes locates the values that are in a chunk and moves them to the top of stack_a
+ * This function takes the variable "check" and moves any value below it to the top of the stack*/
 int				find_node_any(t_node **stack, int check)
 {
 	int		pos1;

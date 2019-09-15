@@ -6,11 +6,13 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 06:39:53 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/14 03:14:48 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/15 09:32:20 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*This function sorts three nodes in asccending order*/
 
 static void	three(t_node **stack_a)
 {
@@ -38,6 +40,8 @@ static void	three(t_node **stack_a)
 		sa(stack_a);
 	}
 }
+
+/*This function sorts two nodes in a list*/
 
 static void	two(t_node **stack_a)
 {
