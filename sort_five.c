@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 06:40:55 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/14 02:59:44 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/14 13:56:56 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void		sort_five(t_node **stack_a, t_node **stack_b)
 		find_min_val(stack_a);
 		pb(stack_a, stack_b);
 	}
+	sort_three(stack_a);
 	while (list_length(stack_b) > 0)
 		pa(stack_b, stack_a);
 }

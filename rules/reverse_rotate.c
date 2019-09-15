@@ -6,7 +6,7 @@
 /*   By: omputle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 12:42:01 by omputle           #+#    #+#             */
-/*   Updated: 2019/09/06 23:02:34 by omputle          ###   ########.fr       */
+/*   Updated: 2019/09/14 16:02:49 by omputle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	reverse_rotate(t_node **start)
 	t_node	*ptr;
 	int		last;
 
+	if (list_length(start) == 1)
+		return ;
 	if ((*start) != NULL || (*start)->next != NULL)
 	{
 		ptr = (*start)->next;
